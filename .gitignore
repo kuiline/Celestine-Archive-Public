@@ -1,0 +1,69 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.vite/
+dist
+dist-ssr
+*.local
+.claude/
+__pycache__/
+*.pyc
+
+# Sensitive files
+api-Key.txt
+*.txt
+
+# Runtime/Temp data
+data/
+data/rag/*.json
+data/stash/
+data/versions/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# AI Generated & User Media Data (Original Images & Texts)
+data/ai_generated/
+data/characters/
+data/scrapbook/
+data/Shiting_Chunks/
+data/sag/
+data/trash/
+
+# Databases and Records
+data/*.json
+data/*.lorebook
+data/*.txt
+
+# Fonts and Binary Files
+*.ttf
+*.TTF
+字体库/
+母版字体库/
+
+# Backups, Archives, and Temp Dirs
+*.zip
+*.rar
+在另一个设备上实现了combat界面3d话和app拆分/
+
+# Credentials and Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key

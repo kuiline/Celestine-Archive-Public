@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Combat Html：外层 Z 轴呼吸；悬停时整块卡片（边框/背景/内容）一起 translateZ + 绕 Y 轴摆动 */
+@keyframes combat-ui-breathe {
+  0%,
+  100% {
+    transform: perspective(520px) translateZ(0px) scale(1);
+  }
+  50% {
+    transform: perspective(520px) translateZ(3px) scale(1.008);
+  }
+}
+
+@keyframes combat-ui-hover-yaw {
+  0%,
+  100% {
+    transform: perspective(560px) translateZ(17px) rotateY(-10deg);
+  }
+  50% {
+    transform: perspective(560px) translateZ(17px) rotateY(10deg);
+  }
+}
+
+.combat-ui-panel {
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  animation: combat-ui-breathe 3.2s ease-in-out infinite;
+  will-change: transform;
+  transition:
+    transform 0.62s cubic-bezier(0.22, 1, 0.32, 1),
+    opacity 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.combat-ui-panel.combat-ui-panel--hover {
+  animation: combat-ui-hover-yaw 2.35s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* 诗句外层 scale(0.8)：呼吸略慢一点，避免叠乘太跳 */
+.combat-ui-panel--poem-inner {
+  animation-duration: 3.6s;
+}
+
+/* 展示短句条：单行不换行；宽度由外层 w-max 随内容撑开（有 max-width 上限）。 */
+/* 生僻字楷体回退的缩小由 CombatPoemKaiFallback 的 size-adjust 控制（非楷/无字再落到 Noto）。 */
+.combat-poem-ui-text {
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.combat-poem-ui-text--editor {
+  field-sizing: content;
+  min-width: 10ch;
+  max-width: min(48rem, calc(100vw - 2rem));
+}
+
+.combat-ui-panel--poem-inner.combat-ui-panel--hover {
+  animation-duration: 2.45s;
+}
+
+button.combat-upload-btn {
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  animation: combat-ui-breathe 3.2s ease-in-out infinite;
+  transition:
+    transform 0.62s cubic-bezier(0.22, 1, 0.32, 1),
+    box-shadow 0.25s ease;
+}
+
+button.combat-upload-btn:hover {
+  animation: combat-ui-hover-yaw 2.35s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}

@@ -1,0 +1,179 @@
+/**
+ * 展示 Web 字体。中间展示短句条用 CombatVersePoemUiYingbikai；环绕短句按角色见 combatVerseTypography.js。
+ */
+@font-face {
+  font-family: 'CombatVersePoemUiYingbikai';
+  src: url('../../字体库/全新硬笔楷书简_web.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 诗句条生僻字：先走系统楷体（无则跳过）；size-adjust 略缩小以贴近主字（再往后才是 Noto 衬线） */
+@font-face {
+  font-family: 'CombatPoemKaiFallback';
+  src: local('KaiTi'), local('楷体'), local('Kaiti SC'), local('STKaiti'), local('DFKai-SB');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 90%;
+}
+
+@font-face {
+  font-family: 'CombatVerseZhongqiHanmo';
+  src: url('../../字体库/钟齐翰墨毛笔.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseZhongqiHanmo';
+  src: url('../../字体库/钟齐翰墨毛笔.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseYegenyouCanyanLishu';
+  src: url('../../字体库/叶根友蚕燕隶书.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseYegenyouCanyanLishu';
+  src: url('../../字体库/叶根友蚕燕隶书.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseZhangcao';
+  src: url('../../字体库/章草.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseZhangcao';
+  src: url('../../字体库/章草.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseBoyangKai7000';
+  src: url('../../字体库/博洋楷体7000.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseBoyangKai7000';
+  src: url('../../字体库/博洋楷体7000.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseBoyangCaoshu7000';
+  src: url('../../字体库/博洋草书7000.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseBoyangCaoshu7000';
+  src: url('../../字体库/博洋草书7000.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseChangchengXingkai';
+  src: url('../../字体库/长城行楷体_web.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseChangchengXingkai';
+  src: url('../../字体库/长城行楷体_web.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseShutifangZhaoJiujiang';
+  src: url('../../字体库/书体坊赵九江钢笔行书体.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseShutifangZhaoJiujiang';
+  src: url('../../字体库/书体坊赵九江钢笔行书体.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseChangchengZhongli';
+  src: url('../../字体库/长城中隶体_web.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseChangchengZhongli';
+  src: url('../../字体库/长城中隶体_web.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseChangchengCuWeibei';
+  src: url('../../字体库/长城粗魏碑体_web.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseChangchengCuWeibei';
+  src: url('../../字体库/长城粗魏碑体_web.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 字库仅 Regular（OS/2 usWeightClass=400）；用字重区间声明避免页面 font-bold/700 时整段回退到衬线 */
+@font-face {
+  font-family: 'CombatVerseMinijianHuangcao';
+  src: url('../../字体库/迷你简黄草体_web.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CombatVerseShutifangAnJingchen';
+  src: url('../../字体库/书体坊安景臣钢笔行书.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CombatVerseShutifangAnJingchen';
+  src: url('../../字体库/书体坊安景臣钢笔行书.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

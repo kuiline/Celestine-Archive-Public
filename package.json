@@ -1,0 +1,46 @@
+{
+  "name": "celestial-archive",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --max-old-space-size=8192 ./node_modules/vite/bin/vite.js",
+    "chroma:up": "docker compose up -d",
+    "chroma:down": "docker compose down",
+    "build": "vite build",
+    "fonts:rebuild-web": "python scripts/rebuild_legacy_font_cmap.py",
+    "lint": "eslint .",
+    "preview": "node --max-old-space-size=8192 ./node_modules/vite/bin/vite.js preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@react-three/postprocessing": "^3.0.4",
+    "chromadb": "^3.4.0",
+    "https-proxy-agent": "^7.0.6",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.563.0",
+    "node-fetch": "^2.7.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.183.2",
+    "undici": "^7.22.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.24",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "npm:rolldown-vite@7.2.5"
+  },
+  "overrides": {
+    "vite": "npm:rolldown-vite@7.2.5"
+  }
+}

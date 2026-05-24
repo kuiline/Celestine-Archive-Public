@@ -1,0 +1,14 @@
+# Chroma 向量库（方案一：Docker）
+# 启动：docker compose up -d
+# 默认 http://127.0.0.1:8000 ，与 ragConfig.chromaHost / chromaPort 一致
+services:
+  chroma:
+    image: chromadb/chroma:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    environment:
+      - ANONYMIZED_TELEMETRY=False
+volumes:
+  chroma-data:
